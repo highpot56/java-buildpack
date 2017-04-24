@@ -27,6 +27,7 @@
                    enabled='${access.logging.enabled}'/>
                    y
 			<!-- GEA10V01 -->
+			<!--
 			<Realm className="org.apache.catalina.realm.JDBCRealm"
 				driverName="${connectionDriver}"
 				connectionURL="${connectionUrl}"
@@ -34,6 +35,15 @@
 				connectionPassword="${connectionPassword}"
 				userTable="GEA10V01" userNameCol="USERID" userCredCol="PASSWD"
 				userRoleTable="GEA10V01" roleNameCol="SYSTEM_ID"
+			/>
+			-->
+			<Realm className="org.apache.catalina.realm.JDBCRealm"
+				driverName="${connectionDriver}"
+				connectionURL="${connectionUrl}"
+				connectionName="${connectionName}"
+				connectionPassword="${connectionPassword}"
+				userTable="T01" userNameCol="USERID" userCredCol="PASSWD"
+				userRoleTable="T01" roleNameCol="SYSTEM_ID"
 			/>
             
             <Host name='localhost'
