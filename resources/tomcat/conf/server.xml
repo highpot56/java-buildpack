@@ -25,20 +25,22 @@
             <Valve className='com.gopivotal.cloudfoundry.tomcat.logging.access.CloudFoundryAccessLoggingValve'
                    pattern='[ACCESS] %{org.apache.catalina.AccessLog.RemoteAddr}r %l %t %D %F %B %S vcap_request_id:%{X-Vcap-Request-Id}i'
                    enabled='${access.logging.enabled}'/>
-                   
+                   y
 			<!-- GEA10V01 -->
-		      <Realm className="org.apache.catalina.realm.JDBCRealm"
-		             driverName="org.postgresql.Driver"
-		             connectionURL="jdbc:postgresql://sl-us-dal-9-portal.6.dblayer.com:23332/compose"
-		             connectionName="GF"
-		             connectionPassword="GF"
-		             userTable="GEA10V01" userNameCol="USERID" userCredCol="PASSWD"
-		             userRoleTable="GEA10V01" roleNameCol="SYSTEM_ID"
-		      />
+			<Realm className="org.apache.catalina.realm.JDBCRealm"
+				driverName="${connectionDriver}"
+				connectionURL="${connectionUrl}"
+				connectionName="${connectionName}"
+				connectionPassword="${connectionPassword}"
+				userTable="GEA10V01" userNameCol="USERID" userCredCol="PASSWD"
+				userRoleTable="GEA10V01" roleNameCol="SYSTEM_ID"
+			/>
             
             <Host name='localhost'
                   failCtxIfServletStartFails='true'>
                 <Listener className='com.gopivotal.cloudfoundry.tomcat.lifecycle.ApplicationStartupFailureDetectingLifecycleListener'/>
+                
+                
             </Host>
         </Engine>
     </Service>
