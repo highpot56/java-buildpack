@@ -19,8 +19,8 @@
 
     <Service name='Catalina'>
     	<!-- URIEncodingはISO-8859-1を指定 -->
-        <Connector port='${http.port}' bindOnInit='false' connectionTimeout='20000' URIEncoding="ISO-8859-1" />
-
+        <Connector port='${http.port}' bindOnInit='false' connectionTimeout='20000' URIEncoding="UTF-8" />
+               
         <Engine defaultHost='localhost' name='Catalina'>
             <Valve className='org.apache.catalina.valves.RemoteIpValve' protocolHeader='x-forwarded-proto'/>
             <Valve className='com.gopivotal.cloudfoundry.tomcat.logging.access.CloudFoundryAccessLoggingValve'
