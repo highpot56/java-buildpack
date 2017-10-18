@@ -19,7 +19,9 @@
   
     <Service name='Catalina'>
     <!--APR library loader. Documentation at /docs/apr.html -->
+    <!-- oota tmp delete
   <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+  -->
   <!--Initialize Jasper prior to webapps are loaded. Documentation at /docs/jasper-howto.html -->
   <Listener className="org.apache.catalina.core.JasperListener" />
   <!-- Prevent memory leaks due to use of particular java/javax APIs-->
