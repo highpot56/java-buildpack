@@ -18,19 +18,6 @@
 <Server port='-1'>
   
     <Service name='Catalina'>
-    <!--APR library loader. Documentation at /docs/apr.html -->
-    <!-- oota tmp delete
-  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
-  -->
-  <!--Initialize Jasper prior to webapps are loaded. Documentation at /docs/jasper-howto.html -->
-  <Listener className="org.apache.catalina.core.JasperListener" />
-  <!-- Prevent memory leaks due to use of particular java/javax APIs-->
-  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
-  <!-- JMX Support for the Tomcat server. Documentation at /docs/non-existent.html -->
-  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" />
-  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
-    
-    	<!-- URIEncodingはISO-8859-1を指定 -->
         <Connector port='${http.port}' bindOnInit='false'
                    enableLookups="false" useBodyEncodingForURI="true" maxPostSize="100000000" connectionTimeout="20000" URIEncoding="UTF-8" />
                
