@@ -37,9 +37,9 @@
 				userRoleTable="gea10v01" roleNameCol="system_id"
 			/>
             
-            <Host name='localhost'>
+            <Host name='localhost'
+                  failCtxIfServletStartFails='true'>
                 <Listener className='com.gopivotal.cloudfoundry.tomcat.lifecycle.ApplicationStartupFailureDetectingLifecycleListener'/>
-
             </Host>
         </Engine>
     </Service>
